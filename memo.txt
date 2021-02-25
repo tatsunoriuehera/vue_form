@@ -1,0 +1,44 @@
+https://jsfiddle.net/uehara/qpwcybkv/82/
+
+https://paiza.hatenablog.com/entry/2019/03/20/%E3%80%902019%E5%B9%B4%E7%89%88%E3%80%91JavaScript%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%AB%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%A6
+
+https://rara-world.com/vuejs-frontend-basic/
+
+vue.js:javascriptのフレームワーク
+既存のサイトへの導入が簡単にできるので
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+を追加して、jsをゴリゴリ書いていくので、
+JQueryから切替がしやすいみたい。
+angularやreactだと、そうはいかないみたい。
+そもそもjsに対しての知識が乏しい場合には
+jsの構文なのかvue.jsの構文なのか区別することさえ難しい。。
+とりあえず、目的はjsやJQueryを簡素化することです。
+同じことができないワケではありませんが、コードが長い・複雑化することです。
+それぞれ得意分野があるみたいなので、やりたいことによって書き分けることが必要かも。
+
+- 追記 -
+angularやreactを調べてみたけど、やっぱりかなり複雑かも。。
+vueは後発で、双方のいいとこどりなので、２つに比べると
+学習コストが低く、コードも分かりやすいというのは納得です。
+
+- クリックしたときに動作する -
+vue
+html//v:on:click="発火イベント名"
+js//methods内で、イベント名:function(){gonyogonyo}
+
+javascript
+html//onClick="発火イベント名"
+js//function イベント名(){gonyogonyo}
+
+- if文(else) -
+html//v-if="発火イベント名"
+js//boolean型なので、
+js側のdata内で(vue関数に使用するための変数の指定)
+でtrue,false
+
+- v-model 双方向データバインディング -
+https://rara-world.com/vuejs-model-computed-watch/
+使用したい値をjs側で管理。
+htmlとjsを紐づけする。
+html//v-model="変数名"
+js//data内に、"変数名":値

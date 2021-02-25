@@ -1,0 +1,69 @@
+/*https://base91.net/vue-mission-9/*/
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="profBox" id="formarea">
+      <h1>メールフォーム</h1>
+      <dl>
+          <dt>メールアドレス※</dt>
+          <dd>
+              <!--v-bind:classでクラスをつけたり消したりできます。-->
+              <!--inputdataの中身がtrueであれば、クラスdelateareaが付与されます。-->
+              <!--delateareaはposishonにより画面外に移動させることで対象要素を消します。-->
+              <!--下記は、入力フォームエリアです。-->
+              <div v-bind:class="{ delatearea: inputdata }">
+                  <input type="text" name="namedata"  placeholder="info@startout.work" class="inputText mailarea" v-model="mailarea" />
+              </div>
+              <!--下記は、入力内容の確認エリアです。-->
+              <!--makesureの中身がtrueであれば、クラスdelateareaが付与されます。-->
+              <!--{{mailarea}}がv-modelで上記のinputと連動しています。-->
+              <!--{{mailarea}}にv-model="mailarea"で入力された箇所がリアルタイムで反映されます。-->
+              <div v-bind:class="{ delatearea: makesure }">{{mailarea}}</div>
+              <p class="erroebox">{{mailmiss}}</p>
+          </dd>
+      </dl>
+      <!--以降、メールアドレスの時と同じように処理しています。-->
+      <dl>
+          <dt>お名前※</dt>
+          <dd>
+              <div v-bind:class="{ delatearea: inputdata }">
+                  <input type="text" name="namedata"  placeholder="例) 佐々木 太郎" class="inputText namearea" v-model="namearea" />
+              </div>
+              <div v-bind:class="{ delatearea: makesure }">{{namearea}}</div>
+              <p class="erroebox">{{namemiss}}</p>
+          </dd>
+      </dl>
+      <dl>
+          <dt>テキストボックス</dt>
+          <dd>
+              <div v-bind:class="{ delatearea: inputdata }">
+                  <textarea name="textboxdata" class="textboxdata textboxarea" v-model="textboxarea"></textarea>
+              </div>
+              <div v-bind:class="{ delatearea: makesure }">
+                  {{textboxarea}}
+              </div>
+          </dd>
+      </dl>
+      <div v-bind:class="{ delatearea: inputdata }">
+          <!--v-on:click="clickbtn"でmethodのclickbtnを起動させます。-->
+          <button class="btnStyle1 submitarea" v-on:click="clickbtn">確認</button>
+      </div>
+      <div v-bind:class="{ delatearea: makesure }">
+          <!--v-on:click="clickbtn_back"でmethodのclickbtn_backを起動させます。-->
+          <button class="btnStyle1 submitarea mgb10px" v-on:click="clickbtn_back">戻る</button>
+          <!--v-on:click="clickbtn_send"でmethodのclickbtn_sendを起動させます。-->
+          <button class="btnStyle1 submitarea" v-on:click="clickbtn_send">送信</button>
+      </div>
+
+
+  <!-- 本番バージョン、サイズと速度のために最適化されています -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
